@@ -1,10 +1,16 @@
-let weight_kg = 65;
-let height_cm = 177;
-
 function calculateBMI(weight, height) {
     let bmi = (weight / height**2) * 10000;
-
-    return bmi;
+    return +bmi.toFixed(2);
 }
 
-console.log(calculateBMI(weight_kg, height_cm));
+function testCalculateBMI() {
+    const result = calculateBMI(66, 177);
+    const expected = 21.07;
+
+    console.assert(
+        result === expected,
+        `The result ${result} doesn't match the expected value ${expected}.`
+    )
+}
+
+testCalculateBMI();
